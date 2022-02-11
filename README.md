@@ -9,5 +9,5 @@ pages/main.py contains helper class web elements locators and class allerts.
 
 tests/yandex_test.py contains two sets Web UI tests for Yandex (https://yandex.ru/)
 # How To Run Tests
- fffgg
- dnkfddvdf
+
+pip3 install -r requirements
