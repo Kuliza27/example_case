@@ -13,3 +13,8 @@ tests/yandex_test.py contains two sets Web UI tests for Yandex (https://yandex.r
 ```
 pip3 install -r requirements
 ```
+2. Download Selenium WebDriver from https://chromedriver.chromium.org/downloads (choose version which is compatible with your browser)/
+3. Run tests:
+```
+$python3 pytest -r yandex_test.py
+```
