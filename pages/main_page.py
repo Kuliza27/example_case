@@ -32,12 +32,12 @@ class Assertions(BasePage):
         assert all(list_bool), f'Link "{link}" is not found in 5 first search results'
         
     def href_in_results(self, link):
-        """ Checks for links in href attribute search results """
+        """ Checks for links in href attribute of search results """
         list_bool = [
             'tensor.ru' in self.get_attr(By.CSS_SELECTOR,
                                          f'#search-result > li:nth-child({i}) a', 'href') for i in range(3, 9)
         ]
-        assert all(list_bool), f'Link "{link}" is not found in 5 first search results'
+        assert all(list_bool), f'Link "{link}" is not found in 5 first href attribute of search results'
 
     def is_link_on_page(self, link):
         """ Checks for a link on a page """
