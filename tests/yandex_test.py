@@ -25,8 +25,16 @@ class TestCase1:
         page.text_input_in_search_field(*YandexLocators.YANDEX_SEARCH_LOCATOR, 'тензор')
         page.push_enter(*YandexLocators.YANDEX_SEARCH_LOCATOR)
         page.link_in_results('tensor.ru')
-
-
+        
+    def test_find_links_in_html_attr_results(self, driver):
+        """ Make sure the link to Tensor.ru is in the first five href attribute of search results """
+        page = Assertions(driver)
+        page.open_page()
+        page.text_input_in_search_field(*YandexLocators.YANDEX_SEARCH_LOCATOR, 'тензор')
+        page.push_enter(*YandexLocators.YANDEX_SEARCH_LOCATOR)
+        page.href_in_results('tensor.ru')
+        
+        
 class TestCase2:
     def test_images_present(self, driver):
         """ Make sure the link to the images section on the main page of Yandex """
