@@ -28,9 +28,7 @@ class Assertions(BasePage):
     def link_in_results(self, link):
         """ Checks for links in search results """
         res = self.find_elements(*YandexLocators.SEARCH_RESULTS_LOCATOR)
-        list_bool = []
-        for i in range(5):
-            list_bool.append('tensor.ru' in res[i].text)
+        list_bool = ['tensor.ru' in res[i].text for i in range(5)]
         assert all(list_bool), f'Link "{link}" is not found in 5 first search results'
 
     def is_link_on_page(self, link):
