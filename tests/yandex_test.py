@@ -15,24 +15,24 @@ class TestCase1:
         """ Make sure the suggest field on the page """
         page = Assertions(driver)
         page.open_page()
-        page.text_input_in_search_field(*YandexLocators.YANDEX_SEARCH_LOCATOR, 'тензор')
+        page.text_input_in_search_field(*YandexLocators.YANDEX_SEARCH_LOCATOR, 'wikipedia')
         page.is_element_present_or_visible(*YandexLocators.SAERCH_SUGGEST_LOCATOR)
 
     def test_find_links_in_results(self, driver):
         """ Make sure the link to Tensor.ru is in the first five search results """
         page = Assertions(driver)
         page.open_page()
-        page.text_input_in_search_field(*YandexLocators.YANDEX_SEARCH_LOCATOR, 'тензор')
+        page.text_input_in_search_field(*YandexLocators.YANDEX_SEARCH_LOCATOR, 'wikipedia')
         page.push_enter(*YandexLocators.YANDEX_SEARCH_LOCATOR)
-        page.link_in_results('tensor.ru')
+        page.link_in_results('wikipedia.org')
         
     def test_find_links_in_html_attr_results(self, driver):
         """ Make sure the link to Tensor.ru is in the first five href attribute of search results """
         page = Assertions(driver)
         page.open_page()
-        page.text_input_in_search_field(*YandexLocators.YANDEX_SEARCH_LOCATOR, 'тензор')
+        page.text_input_in_search_field(*YandexLocators.YANDEX_SEARCH_LOCATOR, 'wikipedia')
         page.push_enter(*YandexLocators.YANDEX_SEARCH_LOCATOR)
-        page.href_in_results('tensor.ru')
+        page.href_in_results('wikipedia.org')
         
         
 class TestCase2:
